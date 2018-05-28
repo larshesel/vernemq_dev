@@ -13,4 +13,7 @@
 -type qos()                 :: 0 | 1 | 2.
 -type payload()             :: binary().
 -type flag()                :: ?true | ?false | boolean() | empty. % empty for test purposes only
+-type subopts() :: map().
+-type subinfo() :: qos() | {qos(), subopts()}.
+-type properties() :: map().
 -endif.
