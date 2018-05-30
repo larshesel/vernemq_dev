@@ -13,3 +13,5 @@
     {ok, [sub_modifiers()]} |
     {error, Reason :: any()} |
     next.
+
+-export_type([sub_modifiers/0]).

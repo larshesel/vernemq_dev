@@ -3,7 +3,7 @@
 
 -type reg_modifiers()   :: {mountpoint, mountpoint()}
                          | {regview, reg_view()}
-                         | {clean_session, flag()}
+                         | {clean_start, flag()}
                          | {properties, properties()}.
 
 %% called as an all_till_ok hook
@@ -11,7 +11,7 @@
                               SubscriberId  :: subscriber_id(),
                               UserName      :: username(),
                               Password      :: password(),
-                              CleanSession  :: flag(),
+                              CleanStart    :: flag(),
                               Properties    :: properties()) ->
     ok |
     {ok, [reg_modifiers()]} |
