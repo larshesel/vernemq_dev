@@ -1,35 +1,17 @@
 -module(auth_on_register_v1_hook).
 -include("vernemq_dev.hrl").
 
+
+%% @doc Overwrite various values for this client. Properties are
+%% passed to the
 -type reg_modifiers()   :: {mountpoint, mountpoint()}
                          | {regview, reg_view()}
                          | {clean_start, flag()}
                          | {properties, properties()}.
 
--type reason_code() :: ?SUCCESS
-                     | ?UNSPECIFIED_ERROR
-                     | ?MALFORMED_PACKET
-                     | ?PROTOCOL_ERROR
-                     | ?IMPL_SPECIFIC_ERROR
-                     | ?UNSUPPORTED_PROTOCOL_VERSION
-                     | ?CLIENT_IDENTIFIER_NOT_VALID
-                     | ?BAD_USERNAME_OR_PASSWORD
-                     | ?NOT_AUTHORIZED
-                     | ?SERVER_UNAVAILABLE
-                     | ?SERVER_BUSY
-                     | ?BANNED
-                     | ?BAD_AUTHENTICATION_METHOD
-                     | ?TOPIC_NAME_INVALID
-                     | ?PACKET_TOO_LARGE
-                     | ?QUOTA_EXCEEDED
-                     | ?PAYLOAD_FORMAT_INVALID
-                     | ?RETAIN_NOT_SUPPORTED
-                     | ?QOS_NOT_SUPPORTED
-                     | ?USE_ANOTHER_SERVER
-                     | ?SERVER_MOVED
-                     | ?CONNECTION_RATE_EXCEEDED.
-
--type error_values() :: {reason_code, reason_code()}
+%% @doc Reason code and properties to be passed back in the puback or
+%% pubrec MQTT frames.
+-type error_values() :: {reason_code, reason_code_name()}
                       | {properties, properties()}.
 
 %% called as an all_till_ok hook
@@ -46,5 +28,4 @@
     next.
 
 -export_type([reg_modifiers/0,
-              error_values/0,
-              reason_code/0]).
+              error_values/0]).

@@ -8,6 +8,10 @@
                       | {mountpoint, mountpoint()}
                       | {properties, properties()}.
 
+
+-type error_values() :: {reason_code, reason_code_name()}
+                      | {properties, properties()}.
+
 -callback auth_on_publish_v1(UserName      :: username(),
                              SubscriberId  :: subscriber_id(),
                              QoS           :: qos(),
@@ -18,7 +22,8 @@
     ok |
     {ok, Payload    :: payload()} |
     {ok, Modifiers  :: [msg_modifier()]} |
-    {error, Reason  :: any()} |
+    {error, [error_values()]} |
+    {error, Reason  :: atom()} | %% will be turned into ?NOT_AUTHORIZED
     next.
 
 -export_type([msg_modifier/0]).

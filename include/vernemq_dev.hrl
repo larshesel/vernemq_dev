@@ -65,7 +65,34 @@
 -define(WILDCARD_SUBS_NOT_SUPPORTED,    wildcard_subs_not_supported).
 
 %% properties
+
+-define(P_PAYLOAD_FORMAT_INDICATOR, p_payload_format_indicator).
+-define(P_MESSAGE_EXPIRY_INTERVAL, p_message_expiry_interval).
+-define(P_CONTENT_TYPE, p_content_type).
+-define(P_RESPONSE_TOPIC, p_response_topic).
+-define(P_CORRELATION_DATA, p_correlation_data).
+-define(P_SUBSCRIPTION_ID, p_subscription_id).
+-define(P_SESSION_EXPIRY_INTERVAL, p_session_expiry_interval).
+-define(P_ASSIGNED_CLIENT_ID, p_assigned_client_id).
+-define(P_SERVER_KEEP_ALIVE, p_server_keep_alive).
+-define(P_AUTHENTICATION_METHOD, p_authentication_method).
+-define(P_AUTHENTICATION_DATA, p_authentication_data).
+-define(P_REQUEST_PROBLEM_INFO, p_request_problem_info).
+-define(P_WILL_DELAY_INTERVAL, p_will_delay_interval).
+-define(P_REQUEST_RESPONSE_INFO, p_request_response_info).
+-define(P_RESPONSE_INFO, p_response_info).
+-define(P_SERVER_REF, p_server_ref).
 -define(P_REASON_STRING, p_reason_string).
+-define(P_RECEIVE_MAX, p_receive_max).
+-define(P_TOPIC_ALIAS_MAX, p_topic_alias_max).
+-define(P_TOPIC_ALIAS, p_topic_alias).
+-define(P_MAX_QOS, p_max_qos).
+-define(P_RETAIN_AVAILABLE, p_retain_available).
+-define(P_USER_PROPERTY, p_user_property).
+-define(P_MAX_PACKET_SIZE, p_max_packet_size).
+-define(P_WILDCARD_SUBS_AVAILABLE, p_wildcard_subs_available).
+-define(P_SUB_IDS_AVAILABLE, p_sub_ids_available).
+-define(P_SHARED_SUBS_AVAILABLE, p_shared_subs_available).
 
 -type reason_code_name() :: ?SUCCESS
                           | ?GRANTED_QOS0
