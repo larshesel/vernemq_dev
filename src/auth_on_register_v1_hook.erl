@@ -4,15 +4,21 @@
 
 %% @doc Overwrite various values for this client. Properties are
 %% passed to the
--type reg_modifiers()   :: {mountpoint, mountpoint()}
-                         | {regview, reg_view()}
-                         | {clean_start, flag()}
-                         | {properties, properties()}.
+-type reg_modifiers()   ::
+        #{
+           mountpoint => mountpoint(),
+           regview => reg_view(),
+           clean_start => flag(),
+           properties => properties()
+         }.
 
 %% @doc Reason code and properties to be passed back in the puback or
 %% pubrec MQTT frames.
--type error_values() :: {reason_code, reason_code_name()}
-                      | {properties, properties()}.
+-type error_values() ::
+        #{
+           reason_code => reason_code_name(),
+           properties => properties()
+         }.
 
 %% called as an all_till_ok hook
 -callback auth_on_register_v1(Peer          :: peer(),
@@ -22,8 +28,8 @@
                               CleanStart    :: flag(),
                               Properties    :: properties()) ->
     ok |
-    {ok, [reg_modifiers()]} |
-    {error, [error_values()]} |
+    {ok, reg_modifiers()} |
+    {error, error_values()} |
     {error, atom()} | %% will be turned into ?NOT_AUTHORIZED
     next.
 
