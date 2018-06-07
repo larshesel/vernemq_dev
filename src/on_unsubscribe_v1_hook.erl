@@ -3,7 +3,7 @@
 
 -type unsub_modifiers() ::
         #{
-           topics := [topic()],
+           topics => [topic()],
            properties => properties()
          }.
 

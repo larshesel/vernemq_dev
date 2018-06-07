@@ -5,13 +5,13 @@
 
 -type auth_modifiers() ::
         #{
-           reason_code := reason_code(),
+           reason_code => reason_code(),
            properties => properties()
          }.
 
 -type error_values() ::
         #{
-           reason_code := reason_code(),
+           reason_code => reason_code(),
            properties => properties()
          }.
 
