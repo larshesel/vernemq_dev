@@ -1,4 +1,4 @@
--module(on_auth_v1_hook).
+-module(on_auth_m5_hook).
 -include("vernemq_dev.hrl").
 
 -type reason_code() :: reason_code_name().
@@ -16,7 +16,7 @@
          }.
 
 %% called as an all_till_ok - hook
--callback on_auth_v1(Properties :: properties()) ->
+-callback on_auth_m5(Properties :: properties()) ->
     {ok, auth_modifiers()} |
     {error, error_values()} |
     {error, any()} | %% does not send a reply to the client!
