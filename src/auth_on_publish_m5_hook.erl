@@ -1,4 +1,4 @@
--module(auth_on_publish_v1_hook).
+-module(auth_on_publish_m5_hook).
 -include("vernemq_dev.hrl").
 -type msg_modifier() ::
         #{
@@ -18,7 +18,7 @@
            properties => properties()
          }.
 
--callback auth_on_publish_v1(UserName      :: username(),
+-callback auth_on_publish_m5(UserName      :: username(),
                              SubscriberId  :: subscriber_id(),
                              QoS           :: qos(),
                              Topic         :: topic(),
