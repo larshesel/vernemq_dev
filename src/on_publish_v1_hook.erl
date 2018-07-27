@@ -1,8 +1,8 @@
--module(on_publish_m5_hook).
+-module(on_publish_v1_hook).
 -include("vernemq_dev.hrl").
 
 %% called as an 'all'-hook, return value is ignored
--callback on_publish_m5(UserName      :: username(),
+-callback on_publish_v1(UserName      :: username(),
                         SubscriberId  :: subscriber_id(),
                         QoS           :: qos(),
                         Topic         :: topic(),

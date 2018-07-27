@@ -1,4 +1,4 @@
--module(auth_on_subscribe_m5_hook).
+-module(auth_on_subscribe_v1_hook).
 -include("vernemq_dev.hrl").
 
 -type sub_modifiers() ::
@@ -8,7 +8,7 @@
          }.
 
 %% called as an all_till_ok - hook
--callback auth_on_subscribe_m5(UserName      :: username(),
+-callback auth_on_subscribe_v1(UserName      :: username(),
                                SubscriberId  :: subscriber_id(),
                                Topics        :: [{Topic :: topic(), SubInfo :: subinfo()}],
                                Properties    :: properties()) ->

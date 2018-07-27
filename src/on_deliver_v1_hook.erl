@@ -1,4 +1,4 @@
--module(on_deliver_m5_hook).
+-module(on_deliver_v1_hook).
 -include("vernemq_dev.hrl").
 -type msg_modifier() ::
         #{
@@ -7,7 +7,7 @@
            properties => properties()
          }.
 
--callback on_deliver_m5(UserName      :: username(),
+-callback on_deliver_v1(UserName      :: username(),
                         SubscriberId  :: subscriber_id(),
                         Topic         :: topic(),
                         Properties    :: properties(),
